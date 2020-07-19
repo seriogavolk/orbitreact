@@ -1,48 +1,40 @@
-import React, {useRef, useState} from 'react'; 
-import * as THREE from 'three';
+import React, {useRef, useState, useEffect} from 'react'; 
+
 // import logo from './logo.svg';
-import '../App.css';
-import { Canvas, useFrame} from 'react-three-fiber'; 
-import { OrbitControls, softShadows, Stars} from 'drei';
+import './App.css';
+import { Canvas, useFrame} from 'react-three-fiber';
+import { OrbitControls, softShadows, MeshWobbleMaterial, Sky, Stars} from 'drei';
 import {useSpring, a} from 'react-spring/three';
-import Blue from '../blue.jpg';
-import Venus from '../venus.jpg';
 
 
 
 softShadows();
 
-
-
-const Sphere = ({position, color, args, rotationee, speed, factor, map})=> {
-    const loader = new THREE.TextureLoader();
-    const texture = loader.load(map);
+const Box = ({position, color, args, rotationee, speed, factor})=> {
   const mesh = useRef(null);
   useFrame(() => (
     mesh.current.rotation.x =
     mesh.current.rotation.y -= rotationee
-    ));
     
- 
+    ));
 
     //Defining the state
 
     const [expand, setExpand] = useState(false);
- 
+
     const props = useSpring({
       scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1]
     });
-
-    
 return (
   <a.mesh onClick={() => setExpand(!expand)} scale={props.scale} castShadow position={position} ref={mesh}>
-    <sphereBufferGeometry attach='geometry' args={args} />
-    <meshStandardMaterial attach='material' map={texture} color={color} speed={speed} factor={factor} /> 
-  </a.mesh>
+  <boxBufferGeometry attach='geometry' args={args} />
+  <MeshWobbleMaterial attach='material' color={color} speed={speed} factor={factor} />
+</a.mesh>
 );
 }
-//https://codesandbox.io/s/alligatordemoreact-three-fiber-0zlu6?file=/src/components/Cubes/index.js
-function Orbit() {
+
+function App() {
+
 
   return (
     <>
@@ -63,27 +55,46 @@ function Orbit() {
       <pointLight position={[-10, 0 , -20]} intensity={0.5} />
       <pointLight position={[0, -10, 0]} intensity={1.5}/>
 
-     
+
+
          
         <group>
-        {/* <mesh receiveShadow position={[0, -3, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <mesh receiveShadow position={[0, -3, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeBufferGeometry attach='geometry' args={[25, 25]}/>
         <shadowMaterial attach='material' opacity={0.3} />
-       </mesh> */}
-       <Sphere 
+       </mesh>
+       <Box 
          position={[0, 1, 0]} 
-         args={[1.5, 32, 16, 100]}
-         rotationee={0.003}  
-         
-         map={Venus}
+         color='rgba(255, 0, 0, 0.5)' 
+         args={[2, 2, 2]}
+         rotationee={0.009}  
+         speed={0.5}
+         factor={1}
          /> 
-          <Sphere 
-         position={[-2, 1, -5]} 
-          args={[0.5, 32, 16, 100]} 
+         <Box 
+         position={[-2, 1, -5]}
+          color='rgba(60, 255, 0, 0.5)' 
+          args={[0.5, 1.5, 0.5]} 
           rotationee={0.004}
-          map={Blue}
+          speed={1.5}
+          factor={1}
           /> 
-
+         <Box 
+         position={[5, 1, -1]} 
+         color='rgba(0, 140, 10, 0.5)' 
+         args={[0.5, 1.5, 0.5]} 
+         rotationee={0.004}
+         speed={1}
+          factor={0.4}
+         /> 
+          <Box 
+         position={[3, 5, -6]} 
+         color='rgba(0, 140, 10, 0.5)' 
+         args={[0.5, 1.5, 0.5]} 
+         rotationee={0.004}
+         speed={2}
+          factor={2}
+         /> 
        </group>
 
        <Stars 
@@ -102,4 +113,4 @@ function Orbit() {
   );
 }
 
-export default Orbit;
+export default App;
