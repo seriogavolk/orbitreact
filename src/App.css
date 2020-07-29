@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 
 html,
 body, #root {
@@ -8,9 +5,87 @@ body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: rgb(255, 255, 255);
 }
 
-body {
-  background: black;
-  position: fixed;
+
+.canva {
+  z-index: 1; 
+  /* pointer-events: none; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
 }
+
+.navbar {
+  position: absolute;
+  z-index: 2;
+  margin-top: 0;
+  margin-left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  
+  
+}
+
+ .navbar li {
+   list-style: none;
+   
+   
+
+ }
+
+ .hero {
+   z-index: 2;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 15vh;
+ }
+
+ .hero h3 {
+   color: aliceblue;
+   text-shadow: 3px 3px 9px #e1e1e6;
+ }
+
+
+ .herowrap {
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+ }
+
+ .about {
+   position: fixed;
+   margin-top: 4em;
+   
+ }
+
+a {
+  transform: scale(1.2) ease 0.3;
+}
+
+ a:hover {
+  text-shadow: 4px 4px 10px black;
+  text-decoration: 'none';
+  color: 'black';
+  transition: ease 0.3;
+ }

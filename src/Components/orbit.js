@@ -1,13 +1,13 @@
 import React, {useRef, useState} from 'react'; 
 import * as THREE from 'three';
-// import logo from './logo.svg';
 import '../App.css';
 import { Canvas, useFrame} from 'react-three-fiber'; 
 import { OrbitControls, softShadows, Stars} from 'drei';
 import {useSpring, a} from 'react-spring/three';
 import Blue from '../blue.jpg';
 import Venus from '../venus.jpg';
-
+import Smallorbits from './Smallorbits';
+import Grouporbit from './Grouporbit';
 
 
 softShadows();
@@ -41,12 +41,13 @@ return (
   </a.mesh>
 );
 }
-//https://codesandbox.io/s/alligatordemoreact-three-fiber-0zlu6?file=/src/components/Cubes/index.js
+
 function Orbit() {
 
   return (
     <>
-      <Canvas className='canva' shadowMap colorManagement camera={{position: [-5, 10, 20], fov: 80}}>
+    <div className='canva'>
+      <Canvas  shadowMap colorManagement camera={{position: [-10, 20, 30], fov: 60}}>
       <ambientLight intensity={0.4} />
       <directionalLight 
         castShadow
@@ -66,38 +67,38 @@ function Orbit() {
      
          
         <group>
-        {/* <mesh receiveShadow position={[0, -3, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeBufferGeometry attach='geometry' args={[25, 25]}/>
-        <shadowMaterial attach='material' opacity={0.3} />
-       </mesh> */}
        <Sphere 
          position={[0, 1, 0]} 
          args={[1.5, 32, 16, 100]}
-         rotationee={0.003}  
+         rotationee={0.001}  
          
          map={Venus}
          /> 
-          <Sphere 
+          {/* <Sphere 
          position={[-2, 1, -5]} 
           args={[0.5, 32, 16, 100]} 
           rotationee={0.004}
           map={Blue}
-          /> 
+          />  */}
 
        </group>
 
        <Stars 
-       count={20000}
+       count={15000}
          fade
        />
+    
+       <Grouporbit />
         
         <OrbitControls
         autoRotate
-        autoRotateSpeed={0.1}
+        autoRotateSpeed={-0.2}
+        
 
     
         />
       </Canvas>
+      </div>
     </>
   );
 }
