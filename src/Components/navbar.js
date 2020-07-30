@@ -17,8 +17,7 @@ return (
     <ul>
         <Link style={styledLink} to='/about'><li>About</li></Link>
         <Link style={styledLink} to='/price'><li>Price</li></Link>
-
-        <li>Contact</li>
+        <Link style={styledLink} to='/contact'><li>Contact</li></Link>
     </ul>
   </div>
 
