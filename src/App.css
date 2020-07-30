@@ -89,3 +89,8 @@ a {
   color: 'black';
   transition: ease 0.3;
  }
+
+.price {
+  position: fixed;
+  margin-top: 4rem;
+} 

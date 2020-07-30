@@ -16,10 +16,11 @@ return (
     <Link style={styledLink} to='/'><h3>Orbit Dev</h3></Link>
     <ul>
         <Link style={styledLink} to='/about'><li>About</li></Link>
-        <li>Price</li>
+        <Link style={styledLink} to='/price'><li>Price</li></Link>
+
         <li>Contact</li>
     </ul>
-    </div>
+  </div>
 
 
   </>
