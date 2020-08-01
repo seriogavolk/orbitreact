@@ -1,5 +1,6 @@
 import React from 'react'
 import Orbit from './orbit'
+import { Link } from 'react-router-dom';
 
 
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
         <div className='hero'>       
         
             <h3>Orbit Web Development Designers</h3>
-            <button>Work With Us</button>
+            <button><Link to='/contact'>Work With Us</Link></button>
         </div>
         </div>
     )

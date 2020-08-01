@@ -4,9 +4,7 @@ import '../App.css';
 import { Canvas, useFrame} from 'react-three-fiber'; 
 import { OrbitControls, softShadows, Stars} from 'drei';
 import {useSpring, a} from 'react-spring/three';
-import Blue from '../blue.jpg';
 import Venus from '../venus.jpg';
-import Smallorbits from './Smallorbits';
 import Grouporbit from './Grouporbit';
 
 
@@ -93,9 +91,10 @@ function Orbit() {
         <OrbitControls
         autoRotate
         autoRotateSpeed={-0.2}
+        minDistance={5}
+        maxDistance={150}
         
-
-    
+         
         />
       </Canvas>
       </div>

@@ -10,9 +10,9 @@ body, #root {
 
 
 .canva {
-  z-index: 1; 
-  /* pointer-events: none; */
-  position: absolute;
+  /* z-index: 1; 
+  pointer-events: none;
+  position: absolute; */
   height: 100%;
   width: 100%;
 
@@ -20,7 +20,7 @@ body, #root {
 
 .navbar {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   margin-top: 0;
   margin-left: 0;
   height: 70px;
@@ -63,9 +63,9 @@ body, #root {
 
 
  .herowrap {
-  height: 50%;
+  height: 50rem;
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -99,3 +99,26 @@ a {
   position: fixed;
   margin-top: 4rem;
 } 
+
+.outside {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainwrap {
+  margin-top: 3%;
+  margin-bottom: 20%;
+  width: 75%;
+  min-width: 400px;
+  height: 80rem;
+  border: 1px solid rgb(216, 212, 212);
+  border-radius: 4%;
+  box-shadow: 3px 3px 8px darkgray;
+  display: flex;
+  justify-content: center;
+}
+
+
+
