@@ -117,7 +117,27 @@ a {
   border-radius: 4%;
   box-shadow: 3px 3px 8px darkgray;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  
+}
+
+.cardcomp {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+ 
+}
+.cardcomp img {
+  margin-right: 2rem;
+}
+
+.cardcomp p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  text-shadow: -10px 5px 5px grey;
 }
 
 

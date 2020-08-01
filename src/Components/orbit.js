@@ -86,7 +86,7 @@ function Orbit() {
          fade
        />
     
-       <Grouporbit />
+       {/* <Grouporbit /> */}
         
         <OrbitControls
         autoRotate
