@@ -132,6 +132,13 @@ a {
 }
 .cardcomp img {
   margin-right: 2rem;
+  box-shadow: -3px 3px 8px gray;
+  transition: all 0.2s;
+  
+}
+.cardcomp img:hover {
+  box-shadow: -7px 6px 12px gray;
+  transform: translate(2px,-2px);
 }
 
 .cardcomp p {
