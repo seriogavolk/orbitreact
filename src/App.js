@@ -5,9 +5,7 @@ import NavBar from './Components/navbar';
 import Home from './home';
 import About from './about';
 import Price from './price';
-import Contact from './contact';
-
-
+import Contact from './contact'
 
 
 
@@ -22,13 +20,14 @@ function App() {
     <NavBar/>
   
     <Switch>
-      <Route path='/about' component={About} />
+      <Route path='/about' component={About}  />
       <Route path='/' component={Home} exact />
       <Route path='/price' component={Price} />
-      <Route path='/contact' component={Contact} />
+      {/* <Route path='/contact' render={() => <Contact submitpackage={packages} />}/> */}
+      <Route path='/contact' component={Contact} exact />
     </Switch>
     
-  
+    
     </Router>
   </>
     

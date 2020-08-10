@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 
 const Price = () => {
+   
+    
     return(
         <>
         <div className="pricemain">
@@ -18,7 +20,12 @@ const Price = () => {
                 <li>API integrations</li>
             </ul>
             <h1>{`$500`}</h1>
-          
+            <Link to={{pathname:'/contact', state:{packages:'Tier 1'}}}> <button 
+                className='btn1 eff' 
+                form='inquiry' 
+                type='submit'
+                >SELECT</button></Link>
+                
         </div>
         <div className="tier2wrapper" >
             <h3>Tier 2</h3>
@@ -34,7 +41,11 @@ const Price = () => {
                 <li>One 3D design</li>
             </ul>
             <h1>{`$2000 + Financing Available`}</h1>
-          
+            <Link to={{pathname:'/contact', state:{packages:'Tier 2'}}}><button 
+                className='btn1 eff' 
+                form='inquiry' 
+                type='submit' 
+                >SELECT</button></Link>
         </div>
         <div className="tier3wrapper" >
         <h3>Tier 3 - Premium</h3>
@@ -51,6 +62,11 @@ const Price = () => {
 
             <h4>* This Package is ideal for small startups including but not limited to E-Commerce, Inventory Management, Small Corporation with User-Base Management.</h4>
             <h1>{`$10000 + Financing Available`}</h1>
+            <Link to={{pathname:'/contact', state:{packages:'Tier 3'}}}><button 
+                className='btn1 eff' 
+                form='inquiry' 
+                type='submit'                
+                >SELECT</button></Link>
         </div>
         </div>
         <Link to="/"><p>Go Back Home</p></Link> 
